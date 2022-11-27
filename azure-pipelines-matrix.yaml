@@ -15,7 +15,7 @@ stages:
           PYTHON_VERSION: '3.6'
         Python37:
           PYTHON_VERSION: '3.7'
-      maxParallel: 1 #3
+      #maxParallel: 3
     steps:
     - checkout: none
     - script: echo $(PYTHON_VERSION)
@@ -43,7 +43,7 @@ stages:
         macos-11-bigsur:
           imageName: 'macOS-11'
           script: 'printenv'
-      maxParallel: 1 #6
+      #maxParallel: 6
     pool:
       vmImage: $(imageName)
     steps:
@@ -65,7 +65,7 @@ stages:
           location: 'east-us'
         Deploy_Prod_WestUS:
           location: 'west-us'
-      maxParallel: 1
+      #maxParallel: 1
     pool:
       vmImage: 'ubuntu-22.04'
     steps:
